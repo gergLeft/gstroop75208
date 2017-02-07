@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <system.webServer>
+    <rewrite>
+      <rules>
+        <rule name="CanonicalHostNameRule2" stopProcessing="true">
+          <match url="(.*)" />
+            <conditions>
+              <add input="{HTTP_HOST}" pattern="^domain\.com$" />
+            </conditions>
+            <action type="Redirect" url="http://www.domain.com/{R:1}" />
+        </rule>
+        <rule name="CanonicalHostNameRule1" stopProcessing="true">
+          <match url="^(\w*/)?index\.php" />
+            <conditions>
+	      <add input="{HTTP_HOST}" pattern="domain\.com$" />
+            </conditions>
+            <action type="Redirect" url="http://www.domain.com/{R:1}" />
+        </rule>
+        <rule name="wordpress" patternSyntax="Wildcard">
+	  <match url="*" />
+	    <conditions>
+	      <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+	      <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+	    </conditions>
+	    <action type="Rewrite" url="index.php" />
+	</rule>
+      </rules>
+    </rewrite>
+  </system.webServer>
+</configuration>

@@ -1,0 +1,5 @@
+web.config
+wp-config.php
+.htaccess
+node_modules
+/nbproject/private/
