@@ -39,6 +39,7 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
  * Output object in easy to read format
  *
  */
+
 function dump($obj) {
   echo "<pre>";
   var_dump($obj);
