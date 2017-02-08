@@ -1,6 +1,9 @@
 <header class="banner">
   <div class="container">
     <a class="brand" href="<?= esc_url(home_url('/')); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/gs_servicemark.png" alt="" width="" height="" /></a>
+    <div class="title">
+      Troop&nbsp;75208 Temperance,&nbsp;MI
+    </div>
     <nav class="nav-primary">
       <?php
       if (has_nav_menu('primary_navigation')) :

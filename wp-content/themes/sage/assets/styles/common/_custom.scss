@@ -9,13 +9,32 @@
     url("//db.onlinewebfonts.com/t/07dc45de3c2d37fcd503045055b2253b.svg#Omnes") format("svg");
 }
 
-header {
+.searchBox {
+  width: 100%;
+  padding-left: 0px;
+}
+
+header.banner {
   background-image:url("/wp-content/themes/sage/dist/images/scoutheader.png");
   background-repeat: repeat-x;
   background-position: center bottom;
+  
+  div.title {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 5em;
+    width: calc(100% - 450px);
+    text-align: right;
+    padding: 40px;
+    line-height: 60px;
+    min-width: 375px;
+  }
+
   .nav-primary {
     margin-top: 45px;
   }
+  
   ul.nav {
     font-size: 1.5em;
     font-weight: 700;
@@ -26,7 +45,7 @@ header {
     
     li {
       display: inline-block;
-      :hover {
+      :hover, :active {
         background-color: initial;
         color: white;
       }
@@ -68,7 +87,7 @@ header {
     position: absolute;
     top: 20px;
     left: 20px;
-    padding: 20px;
+    padding: 0 20px;
   }
 
   &.frameCnt3 .frame1 {
@@ -120,4 +139,31 @@ header {
 
 .volunteerssBG {
   background-color: $volunteersColor;
+}
+
+@media only screen and (max-width: 1060px) {
+  header.banner div.title {
+    font-size: 4em;
+  }
+}
+@media only screen and (max-width: 935px) {
+  header.banner div.title {
+    font-size: 3em;
+  }
+}
+
+@media only screen and (max-width: 715px) {
+  header.banner a.brand img{
+    width: 180px;
+  }
+  
+  header.banner div.title {
+    font-size: 1.65em;
+    margin-top: 20px;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    min-width: initial;
+    line-height: initial;
+  }
 }
