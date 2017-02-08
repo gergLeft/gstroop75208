@@ -196,3 +196,15 @@ function custom_excerpt_length( $length ) {
 function get_url_query_var($param, $default_fallback = "") {
   return isset($_GET[$param]) ? $_GET[$param] : $default_fallback;
 }
+
+function get_rank_category_id() {
+  $catSource = get_categories();
+  foreach($catSource as $s) {
+    if ('ranks' === $s->slug) :
+      $parent = $s->term_id;
+      break;
+    endif;   
+  }
+  return $parent;
+}
+  

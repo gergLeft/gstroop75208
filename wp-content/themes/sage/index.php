@@ -1,3 +1,8 @@
+<?php 
+  global $rankParent;
+  $rankParent = \Roots\Sage\Extras\get_rank_category_id();
+?>
+  
 <?php get_template_part('templates/page', 'header'); ?>
 
 <?php if (!have_posts()) : ?>
@@ -7,8 +12,11 @@
   <?php get_search_form(); ?>
 <?php endif; ?>
 
-<?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
-<?php endwhile; ?>
+<?php 
+  while (have_posts()) : the_post();
+    get_template_part('templates/content-news');
+  endwhile; 
+  wp_reset_postdata();
+?>
 
 <?php the_posts_navigation(); ?>
