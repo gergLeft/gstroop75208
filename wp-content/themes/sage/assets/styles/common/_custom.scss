@@ -45,7 +45,7 @@ header.banner {
     
     li {
       display: inline-block;
-      :hover, :active {
+      :hover, :active, :focus {
         background-color: initial;
         color: white;
       }
@@ -53,6 +53,47 @@ header.banner {
   }
 }
 
+article {
+  border-bottom: 2px solid $gsGreen;
+}
+
+.ranksApplied {
+  width: 33%;
+  height: 100%;
+  float: left;
+  padding-right: 10px;
+  margin-top: 26px;
+  
+  img {
+    display: block;
+    float: left;
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .ranksApplied {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 350) {
+  .ranksApplied {
+    img {
+      width: auto;
+      height: 29px;
+    }
+  }
+}
+
+.contentBlock {
+  float: left;
+  width: 65%;
+}
+/*
 .contentFrame { 
   position: relative; 
   display: inline-block; 
@@ -113,6 +154,7 @@ header.banner {
   }
 }
 
+*/
 .daisiesBG {
   background-color: $daisiesColor;
 }
